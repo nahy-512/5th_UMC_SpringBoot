@@ -1,6 +1,5 @@
 package umc.study.converter;
 
-import umc.study.web.dto.TempRequest;
 import umc.study.web.dto.TempResponse;
 
 public class TempConverter {

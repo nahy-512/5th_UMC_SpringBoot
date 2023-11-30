@@ -2,6 +2,7 @@ package umc.study.domain;
 
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
+import umc.study.domain.common.BaseEntity;
 import umc.study.domain.enums.Gender;
 import umc.study.domain.enums.SocialType;
 import umc.study.domain.enums.UserStatus;
@@ -19,7 +20,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class User {
+public class User extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,6 +52,8 @@ public class User {
     private String email;
 
     private Integer point;
+
+    private Boolean is_owner;
 
     @Column(length = 15)
     private String phoneNumber;

@@ -23,7 +23,7 @@ import java.util.Optional;
 
 @Slf4j
 @RestControllerAdvice(annotations = {RestController.class})
-public class ExceptionAdvice extends ResponseEntityExceptionHandler {
+public class ExceptionAdvice extends ResponseEntityExceptionHandler { // Global Advice Handler
 
     @org.springframework.web.bind.annotation.ExceptionHandler
     public ResponseEntity<Object> validation(ConstraintViolationException e, WebRequest request) {

@@ -29,8 +29,11 @@ public class User extends BaseEntity {
     @Column(nullable = false, length = 20)
     private String name;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false, length = 40)
     private String address;
+
+    @Column(nullable = false, length = 40)
+    private String specAddress;
 
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "VARCHAR(10)")
@@ -48,7 +51,8 @@ public class User extends BaseEntity {
 
     private LocalDate inactiveDate;
 
-    @Column(nullable = false, length = 50)
+    // 이메일은 소셜 로그인에서 처리한 후 기입 받는 것이 맞는 순서이나, 소셜 로그인이 없는 상황이라 nullable를 허용해둠
+//    @Column(nullable = false, length = 50)
     private String email;
 
     private Integer point;
@@ -62,8 +66,8 @@ public class User extends BaseEntity {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<UserAgree> userAgreeList = new ArrayList<>();
 
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-//    private List<UserPrefer> userPreferList = new ArrayList<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<UserPrefer> userPreferList = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Review> reviewList = new ArrayList<>();

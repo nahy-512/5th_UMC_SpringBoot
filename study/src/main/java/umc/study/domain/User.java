@@ -2,6 +2,8 @@ package umc.study.domain;
 
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import umc.study.domain.common.BaseEntity;
 import umc.study.domain.enums.Gender;
 import umc.study.domain.enums.SocialType;
@@ -9,7 +11,6 @@ import umc.study.domain.enums.UserStatus;
 import umc.study.domain.mapping.UserAgree;
 import umc.study.domain.mapping.UserMission;
 import umc.study.domain.mapping.UserPrefer;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ import java.util.List;
 
 @Entity
 @Getter
+@DynamicUpdate
+@DynamicInsert
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -55,9 +58,13 @@ public class User extends BaseEntity {
 //    @Column(nullable = false, length = 50)
     private String email;
 
-    private Integer point;
+    @ColumnDefault("0") // @Column(columnDefinition = "INTEGER DEFAULT 0")
+    @Builder.Default()
+    private Integer point = 0;
 
-    private Boolean is_owner;
+    @Column(columnDefinition = "BOOLEAN DEFAULT false")
+    @Builder.Default()
+    private Boolean is_owner = false;
 
     @Column(length = 15)
     private String phoneNumber;

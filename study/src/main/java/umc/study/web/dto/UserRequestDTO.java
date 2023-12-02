@@ -29,4 +29,15 @@ public class UserRequestDTO {
         @ExistCategories
         List<Long> preferCategory; // 선호 음식 종류
     }
+
+    //TODO: Validation 처리
+    @Getter
+    public static class StartMissionDTO{
+        // Path Variable
+//        @NotNull
+//        Long userId;
+
+        @NotNull
+        Long missionId;
+    }
 }

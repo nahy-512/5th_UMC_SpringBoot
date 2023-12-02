@@ -21,6 +21,7 @@ public class UserMission extends BaseEntity {
     private Long id;
 
     @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "VARCHAR(15) DEFAULT 'CHALLENGING'")
     private MissionStatus status;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -31,5 +32,11 @@ public class UserMission extends BaseEntity {
     @JoinColumn(name = "mission_id")
     private Mission mission;
 
-
+    /* 연관 관계를 설정하고, 양방향 매핑이 된 경우 연관 관계 편의 메서드를 이용해 양방향 매핑을 해줌 */
+    public void setUser(User user) {
+        if (this.user != null)
+            user.getUserMissionList().remove(this);
+        this.user = user;
+        user.getUserMissionList().add(this);
+    }
 }

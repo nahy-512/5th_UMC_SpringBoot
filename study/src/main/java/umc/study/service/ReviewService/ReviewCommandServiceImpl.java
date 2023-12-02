@@ -35,9 +35,9 @@ public class ReviewCommandServiceImpl implements ReviewCommandService {
 
         // User 얻기
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new EntityNotFoundException("User not found with id: " + storeId));
+                .orElseThrow(() -> new EntityNotFoundException("User not found with id: " + userId));
 
-        // newStore에 region 설정
+        // newReview에 store, user 설정
         newReview.setStore(store);
         newReview.setUser(user);
 

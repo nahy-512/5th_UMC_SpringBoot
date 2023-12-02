@@ -3,6 +3,7 @@ package umc.study.converter;
 import lombok.Getter;
 import umc.study.domain.User;
 import umc.study.domain.enums.Gender;
+import umc.study.domain.mapping.UserMission;
 import umc.study.web.dto.UserRequestDTO;
 import umc.study.web.dto.UserResponseDTO;
 import java.time.LocalDateTime;
@@ -13,6 +14,15 @@ public class UserConverter {
     public static UserResponseDTO.JoinResultDTO toJoinResultDTO(User user) {
         return UserResponseDTO.JoinResultDTO.builder()
                 .userId(user.getId())
+                .createdAt(LocalDateTime.now())
+                .build();
+    }
+
+    // 미션 시작
+    public static UserResponseDTO.StartMissionResultDTO toMissionResultDTO(UserMission userMission){
+        return UserResponseDTO.StartMissionResultDTO.builder()
+                .memberId(userMission.getUser().getId())
+                .missionId(userMission.getMission().getId())
                 .createdAt(LocalDateTime.now())
                 .build();
     }

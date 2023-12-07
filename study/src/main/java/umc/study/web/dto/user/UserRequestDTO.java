@@ -1,4 +1,4 @@
-package umc.study.web.dto;
+package umc.study.web.dto.user;
 
 import lombok.Getter;
 import umc.study.validation.annotation.ExistCategories;

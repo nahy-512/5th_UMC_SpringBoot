@@ -1,11 +1,10 @@
 package umc.study.converter;
 
-import lombok.Getter;
 import umc.study.domain.User;
 import umc.study.domain.enums.Gender;
 import umc.study.domain.mapping.UserMission;
-import umc.study.web.dto.UserRequestDTO;
-import umc.study.web.dto.UserResponseDTO;
+import umc.study.web.dto.user.UserRequestDTO;
+import umc.study.web.dto.user.UserResponseDTO;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 

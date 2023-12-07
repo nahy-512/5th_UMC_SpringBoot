@@ -16,7 +16,7 @@ import umc.study.repository.FoodCategoryRepository;
 import umc.study.repository.MissionRepository;
 import umc.study.repository.UserMissionRepository;
 import umc.study.repository.UserRepository;
-import umc.study.web.dto.UserRequestDTO;
+import umc.study.web.dto.user.UserRequestDTO;
 import java.util.List;
 import java.util.stream.Collectors;
 

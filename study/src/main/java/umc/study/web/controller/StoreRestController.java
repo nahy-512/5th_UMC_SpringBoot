@@ -6,8 +6,8 @@ import umc.study.apiPayload.ApiResponse;
 import umc.study.converter.StoreConverter;
 import umc.study.domain.Store;
 import umc.study.service.StoreService.StoreCommandService;
-import umc.study.web.dto.StoreRequestDTO;
-import umc.study.web.dto.StoreResponseDTO;
+import umc.study.web.dto.store.StoreRequestDTO;
+import umc.study.web.dto.store.StoreResponseDTO;
 
 import javax.validation.Valid;
 

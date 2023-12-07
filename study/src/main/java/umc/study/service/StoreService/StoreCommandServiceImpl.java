@@ -8,7 +8,7 @@ import umc.study.domain.Region;
 import umc.study.domain.Store;
 import umc.study.repository.RegionRepository;
 import umc.study.repository.StoreRepository;
-import umc.study.web.dto.StoreRequestDTO;
+import umc.study.web.dto.store.StoreRequestDTO;
 
 import javax.persistence.EntityNotFoundException;
 

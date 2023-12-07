@@ -1,10 +1,8 @@
-package umc.study.web.dto;
+package umc.study.web.dto.review;
 
-import io.swagger.v3.oas.annotations.Parameter;
 import lombok.Getter;
 
 import javax.validation.constraints.Max;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class ReviewRequestDTO {

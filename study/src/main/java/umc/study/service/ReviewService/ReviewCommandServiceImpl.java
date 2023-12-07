@@ -10,7 +10,7 @@ import umc.study.domain.User;
 import umc.study.repository.ReviewRepository;
 import umc.study.repository.StoreRepository;
 import umc.study.repository.UserRepository;
-import umc.study.web.dto.ReviewRequestDTO;
+import umc.study.web.dto.review.ReviewRequestDTO;
 
 import javax.persistence.EntityNotFoundException;
 

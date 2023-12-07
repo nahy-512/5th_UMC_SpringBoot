@@ -7,8 +7,8 @@ import umc.study.converter.UserConverter;
 import umc.study.domain.User;
 import umc.study.domain.mapping.UserMission;
 import umc.study.service.UserService.UserCommandService;
-import umc.study.web.dto.UserRequestDTO;
-import umc.study.web.dto.UserResponseDTO;
+import umc.study.web.dto.user.UserRequestDTO;
+import umc.study.web.dto.user.UserResponseDTO;
 
 import javax.validation.Valid;
 
@@ -19,7 +19,7 @@ public class UserRestController {
 
     private final UserCommandService userCommandService;
 
-    @PostMapping("/")
+    @PostMapping("")
     public ApiResponse<UserResponseDTO.JoinResultDTO> join (@RequestBody @Valid UserRequestDTO.JoinDto request) {
         User user = userCommandService.joinUser(request);
         return ApiResponse.onSuccess(UserConverter.toJoinResultDTO(user));

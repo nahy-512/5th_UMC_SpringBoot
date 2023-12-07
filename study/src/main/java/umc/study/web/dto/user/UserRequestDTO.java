@@ -1,4 +1,4 @@
-package umc.study.web.dto;
+package umc.study.web.dto.user;
 
 import lombok.Getter;
 import umc.study.validation.annotation.ExistCategories;
@@ -28,5 +28,16 @@ public class UserRequestDTO {
         String specAddress; // 상세 주소 (동, 호수)
         @ExistCategories
         List<Long> preferCategory; // 선호 음식 종류
+    }
+
+    //TODO: Validation 처리
+    @Getter
+    public static class StartMissionDTO{
+        // Path Variable
+//        @NotNull
+//        Long userId;
+
+        @NotNull
+        Long missionId;
     }
 }

@@ -16,7 +16,7 @@ import javax.persistence.EntityNotFoundException;
 
 @Service
 @RequiredArgsConstructor
-@Transactional
+@Transactional(readOnly = true)
 public class ReviewCommandServiceImpl implements ReviewCommandService {
 
     private final ReviewRepository reviewRepository;
@@ -26,6 +26,7 @@ public class ReviewCommandServiceImpl implements ReviewCommandService {
 
 
     @Override
+    @Transactional
     public Review joinReview(ReviewRequestDTO.JoinReviewDto request, Long storeId, Long userId) {
         Review newReview = ReviewConverter.toReview(request);
 

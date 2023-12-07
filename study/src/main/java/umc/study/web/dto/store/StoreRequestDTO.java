@@ -15,7 +15,7 @@ public class StoreRequestDTO {
         String information; // 설명
         @Size(min = 5, max = 40)
         String address; // 주소
-        @Size(min = 5, max = 15)
+        @Size(max = 15)
         String category; // ex. 중식당
     }
 }

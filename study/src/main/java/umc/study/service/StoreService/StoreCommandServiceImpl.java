@@ -14,7 +14,7 @@ import javax.persistence.EntityNotFoundException;
 
 @Service
 @RequiredArgsConstructor
-@Transactional
+@Transactional(readOnly = true)
 public class StoreCommandServiceImpl implements StoreCommandService {
 
     private final StoreRepository storeRepository;
@@ -22,6 +22,7 @@ public class StoreCommandServiceImpl implements StoreCommandService {
     private final RegionRepository regionRepository;
 
     @Override
+    @Transactional
     public Store joinStore(StoreRequestDTO.JoinStoreDto request, Long regionId) {
         Store newStore = StoreConverter.toStore(request);
 

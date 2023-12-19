@@ -44,4 +44,31 @@ public class ReviewResponseDTO {
         String body;
         LocalDate createdAt;
     }
+
+    // 10주차 내가 작성한 리뷰 목록 조회
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class MyReviewListDTO{
+        List<MyReviewDTO> reviewList;
+        Integer listSize;
+        Integer totalPage;
+        Long totalElements;
+        Boolean isFirst;
+        Boolean isLast;
+    }
+
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class MyReviewDTO{
+        Long storeId;
+        String storeName;
+        String ownerNickname;
+        Float score;
+        String body;
+        LocalDate createdAt;
+    }
 }

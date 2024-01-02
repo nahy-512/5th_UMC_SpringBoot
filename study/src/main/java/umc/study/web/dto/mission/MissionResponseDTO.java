@@ -36,4 +36,32 @@ public class MissionResponseDTO {
         LocalDate deadline;
         LocalDate createdAt;
     }
+
+    // 10주차 내가 진행중인 미션 목록
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class ChallengingMissionListDTO {
+        List<ChallengingMissionDTO> missionList;
+        Integer listSize;
+        Integer totalPage;
+        Long totalElements;
+        Boolean isFirst;
+        Boolean isLast;
+    }
+
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class ChallengingMissionDTO {
+        Long storeId;
+        String storeName;
+        Long missionId;
+        Integer reward;
+        String description;
+        LocalDate deadline;
+        LocalDate createdAt; // 미션 수행 시간
+    }
 }

@@ -34,8 +34,8 @@ public class UserRequestDTO {
     @Getter
     public static class StartMissionDTO{
         // Path Variable
-//        @NotNull
-//        Long userId;
+        @NotNull
+        Long userId;
 
         @NotNull
         Long missionId;
